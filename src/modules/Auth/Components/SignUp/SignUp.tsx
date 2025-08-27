@@ -28,7 +28,7 @@ const SignUp = () => {
     e.preventDefault();
     
     // Kiểm tra dữ liệu trước khi gửi
-    if (!formData.username || !formData.username || !formData.passwords ) {
+    if (!formData.username || !formData.fullname || !formData.passwords ) {
       alert('Vui lòng điền đầy đủ thông tin');
       return;
     }

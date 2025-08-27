@@ -33,11 +33,13 @@ export const SignUp = async(
 export const SignIn = async(
     UserData:SignInForm
 ):Promise<SignInResponse> =>{
-    const url = `${Client.defaults.baseURL}/user`;
+    const url = `${Client.defaults.baseURL}/api/user/login`;
     try {
         const response = await Client.post<SignInResponse>(url,UserData);
+        console.log(response.data);
         return response.data;
     }catch(error :unknown){
+        
         if(error instanceof AxiosError){
             const message = error.response?.data?.message||"sign in failed";
             throw new Error(message);
